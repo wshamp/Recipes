@@ -66,8 +66,9 @@ struct DessertView: View {
                 }
                 .navigationBarTitle(Text(viewModel.mealName), displayMode: .large)
             case .loading:
-                ProgressView("Loading")
+                ProgressView()
                     .scaleEffect(2.0)
+                    .opacity(0.5)
             case .failure:
                 //if we are failed we show an empty view as the alert will be presented. We 
                 //dismiss when the alert is closed so user will never see this without

@@ -128,9 +128,11 @@ struct DessertListView: View {
                                         }
                                     }
                                 }.padding(.top)
-                            } else {
+                            } else if viewModel.serviceState == .idle {
                                 Text("No Results:\nPull to refresh or clear your search text.")
                                     .multilineTextAlignment(.center)
+                            } else {
+                                EmptyView()
                             }
                         }
                         .refreshable {
